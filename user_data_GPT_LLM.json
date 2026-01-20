@@ -1,0 +1,15 @@
+{
+    "name": "kavya",
+    "known_skills": [
+        "ML,DL"
+    ],
+    "known_skills_with_levels": "ML,DL (Beginner)",
+    "skills_to_learn": [
+        "GenAI"
+    ],
+    "career_goals": [
+        "AIML Engineer"
+    ],
+    "learning_speed": "slow",
+    "preferred_format": "video"
+}
