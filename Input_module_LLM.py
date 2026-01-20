@@ -1,14 +1,9 @@
 import json
 from groq import Groq
 from groq_API import groq_api_key
-# ---------------------------
-# LLM Client Setup
-# ---------------------------
+
 client = Groq(api_key=groq_api_key)
 
-# ---------------------------
-# Generate 5 MCQ Questions
-# ---------------------------
 def generate_mcq_questions(skill, level):
     prompt = f"""
     Generate exactly 5 MCQ questions to test the user's true knowledge level.
@@ -55,9 +50,6 @@ def generate_mcq_questions(skill, level):
     return mcqs[:5]
 
 
-# ---------------------------
-# Evaluate MCQ Answers
-# ---------------------------
 def evaluate_mcq_answers(mcqs, user_answers):
     prompt_text = ""
 
@@ -91,10 +83,6 @@ def evaluate_mcq_answers(mcqs, user_answers):
     except:
         return 0
 
-
-# ---------------------------
-# Level Adjustment Logic
-# ---------------------------
 def adjust_level(level, correct):
     if correct >= 3:
         return level
@@ -184,19 +172,13 @@ def Extract_Input():
 
     return user_data
 
-
-# ---------------------------
-# SAVE JSON
-# ---------------------------
 def Save_To_JSON(data, filename="user_data_GPT_LLM.json"):
     with open(filename, "w") as f:
         json.dump(data, f, indent=4)
     print(f"\nSaved to {filename}")
 
 
-# ---------------------------
-# MAIN RUN
-# ---------------------------
 if __name__ == "__main__":
     data = Extract_Input()
     Save_To_JSON(data)
+
